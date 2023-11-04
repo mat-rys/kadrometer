@@ -1,0 +1,21 @@
+version: '3'
+services:
+  api:
+    build: ./
+    container_name: Kadrometr
+    image: api-backend-kadrometr
+    ports:
+      - "8080:8080"
+    environment:
+      - logout.link=http://localhost:8080/logout
+      - login.link=http://localhost:8080/login
+      - register.link=http://localhost:8080/register
+#  db:
+#    image: postgres
+#    container_name: database-kadrometr
+#    ports:
+#      - "5432:5432"
+#    environment:
+#      - POSTGRES_DB=kadromierz
+#      - POSTGRES_USER=postgres
+#      - POSTGRES_PASSWORD=1234
